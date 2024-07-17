@@ -8,3 +8,30 @@
         @apply bg-white min-h-screen;
     }
 }
+
+@layer components {
+    .bg-gradient {
+        @apply bg-gradient-to-br from-blue-500 to-sky-400 text-white;
+    }
+}
+
+@layer utilities {
+    .glow {
+        position: relative;
+        z-index: 0;
+    }
+
+    .glow::after {
+        content: "";
+        position: absolute;
+        top: 0%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        width: 100%;
+        height: 500px;
+        background: radial-gradient(circle, #3b82f633, #0ea5e933);
+        filter: blur(100px);
+        border-radius: 50%;
+        z-index: -1;
+    }
+}
